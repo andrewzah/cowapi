@@ -33,7 +33,7 @@ module Cowapi
         qp = parse_career_stats(node, heroID) unless mode == "competitive"
       end
     end
-    Hero.new(heroName, comp, qp)
+    Hero.new(heroName, qp, comp)
   end
 
   def self.parse_heroes(parsed : XML::Node, mode, input = HERO_DIV_IDS)
