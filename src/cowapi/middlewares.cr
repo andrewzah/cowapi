@@ -11,6 +11,7 @@ module Cowapi
       call_next(env)
     end
   end
+
   add_handler(JsonHandler.new)
 
   class BattleTagHandler < Kemal::Handler
@@ -23,6 +24,7 @@ module Cowapi
       call_next(env)
     end
   end
+
   add_handler BattleTagHandler.new
 
   class ParamsHandler < Kemal::Handler
@@ -50,10 +52,11 @@ module Cowapi
       call_next(env)
     end
   end
+
   add_handler(ParamsHandler.new)
 
   class DataFetcher < Kemal::Handler
-    only DATA_ROUTES 
+    only DATA_ROUTES
 
     def call(env)
       LOG.debug("[Middleware] Running Data Fetcher")
@@ -67,11 +70,11 @@ module Cowapi
       return Cowapi.jsonify_error("User profile not found. Did you set the region and platform?") unless statusCode == 200
 
       env.set("data", data)
-      
       LOG.debug("[Middlewares] All handlers have completed running.")
 
       call_next(env)
     end
   end
+
   add_handler(DataFetcher.new)
 end

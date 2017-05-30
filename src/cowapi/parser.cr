@@ -1,3 +1,18 @@
+# Copyright (C) 2017 - Andrew Zah (github.com/azah)
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 module Cowapi
   def self.parse_career_stats(node, heroID) : Array(Stat) | Nil
     boxes = xpath_ns(node, ".//div[@data-category-id='#{heroID}']")
@@ -60,11 +75,11 @@ module Cowapi
     level = playerLevelDiv[0].children[0].content.to_i32
     prestigeLevel = (PRESTIGE[playerLevelDiv[0]["style"][-30..-13]]? || 0) * 100 + level
 
-		rank, tierPortrait, tier, rank = nil, nil, nil, nil
+    rank, tierPortrait, tier, rank = nil, nil, nil, nil
     if rankDiv = xpath_ns(masthead[0], "./div/div/div[@class='competitive-rank']/*")
-	    tierPortrait = rankDiv[0]["src"]
+      tierPortrait = rankDiv[0]["src"]
       tier = TIER[rankDiv[0]["src"][-10..-1]]? || "Unknown"
-    	rank = rankDiv[1].content.to_i32
+      rank = rankDiv[1].content.to_i32
     end
 
     gamesWon = xpath_ns(masthead[0], "./p")[0].content[/\d+/].to_i32 || 0

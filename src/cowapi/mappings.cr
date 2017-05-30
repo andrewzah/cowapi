@@ -27,7 +27,7 @@ module Cowapi
       avatar: String,
       name: String,
       player_level: Int32,
-			border_portrait: String,
+      border_portrait: String,
       comp_rank: Int32 | Nil,
       tier_portrait: String | Nil,
       tier: String | Nil,
