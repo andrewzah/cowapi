@@ -1,5 +1,3 @@
-require "http/client"
-
 module Cowapi
   # example real url
   # https://playoverwatch.com/en-us/career/pc/us/Dad-12262

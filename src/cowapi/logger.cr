@@ -19,5 +19,6 @@ module Cowapi
   end
 
   LOG = Logger.new(STDOUT)
+  LOG.level = Logger::Severity::DEBUG
   LOG.formatter = FORMATTER
 end
