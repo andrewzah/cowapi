@@ -13,7 +13,7 @@ See [the Roadmap](roadmap.md)
 By default, the region is `us` and platform is `pc`.  
 You can set these with `region` and `platform` parameters, respectively.
 ```
-https://andrewzah.com/cowapi/u/Dad-12262/heroes/lucio?region=eu&platform=xbox
+https://apis.andrewzah.com/cowapi/v1/u/Dad-12262/heroes/lucio?region=eu&platform=xbox
 ```
 
 Currently you cannot specify multiple regions/platforms in 1 request. That feature is on the roadmap.
@@ -22,15 +22,15 @@ Currently you cannot specify multiple regions/platforms in 1 request. That featu
 By default, cowapi will return both competitive & quickplay stats.  
 However you can specify one or the other via the `mode` parameter:
 ```
-https://andrewzah.com/cowapi/u/Dad-12262/heroes?mode=competitive
+https://apis.andrewzah.com/cowapi/v1/u/Dad-12262/heroes?mode=competitive
 ```
 
 ### Heroes/Hero
 ```
-https://andrewzah.com/cowapi/u/:battleTag/heroes/:hero
+https://apis.andrewzah.com/cowapi/v1/u/:battleTag/heroes/:hero
 ```
 ```
-https://andrewzah.com/cowapi/u/Dad-12262/heroes/lucio
+https://apis.andrewzah.com/cowapi/v1/u/Dad-12262/heroes/lucio
 ```
 **Singular Hero Request**
 ```json
@@ -55,10 +55,10 @@ https://andrewzah.com/cowapi/u/Dad-12262/heroes/lucio
 ### Heroes/Hero+Hero
 Multiple heroes can be specified! 
 ```
-https://andrewzah.com/cowapi/u/:battleTag/heroes/:hero1+:hero2+:heroN
+https://apis.andrewzah.com/cowapi/v1/u/:battleTag/heroes/:hero1+:hero2+:heroN
 ```
 ```
-https://andrewzah.com/cowapi/u/Dad-12262/heroes/lucio+pharah
+https://apis.andrewzah.com/cowapi/v1/u/Dad-12262/heroes/lucio+pharah
 ```
 **Multiple Heroes Request**:
 ```json
@@ -103,19 +103,19 @@ https://andrewzah.com/cowapi/u/Dad-12262/heroes/lucio+pharah
 ### Heroes
 The same as Heroes/Hero+Hero, but with all heroes + **total**.
 ```
-https://andrewzah.com/cowapi/u/:battleTag/heroes
+https://apis.andrewzah.com/cowapi/v1/u/:battleTag/heroes
 ```
 ```
-https://andrewzah.com/cowapi/u/Dad-12262/heroes
+https://apis.andrewzah.com/cowapi/v1/u/Dad-12262/heroes
 ```
 
 ### Profile
 Miscellaneous Profile Info + the same reponse as Heroes.
 ```
-https://andrewzah.com/cowapi/u/:battleTag/heroes
+https://apis.andrewzah.com/cowapi/v1/u/:battleTag/heroes
 ```
 ```
-https://andrewzah.com/cowapi/u/Dad-12262/heroes
+https://apis.andrewzah.com/cowapi/v1/u/Dad-12262/heroes
 ```
 **Profile result**: Comp stats will only return if they have values. 
 ```json

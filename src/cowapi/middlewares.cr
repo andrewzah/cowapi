@@ -1,7 +1,7 @@
 # These middlewares are for reducing repetition in routes.cr
 # and handling stuff that happens on most requests (redis/ratelimit/xml)
 module Cowapi
-  DATA_ROUTES = ["/api/u/:battleTag", "/api/u/:battleTag/heroes", "/api/u/:battleTag/heroes/:hero"]
+  DATA_ROUTES = ["/api/v1/u/:battleTag", "/api/v1/u/:battleTag/heroes", "/api/v1/u/:battleTag/heroes/:hero"]
   HERO_ROUTES = DATA_ROUTES[-1..-1]
 
   class JsonHandler < Kemal::Handler

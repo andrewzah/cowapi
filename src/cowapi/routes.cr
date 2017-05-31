@@ -24,17 +24,17 @@ module Cowapi
     }.to_json
   end
 
-  get "/api/u/:battleTag" do |env|
+  get "/api/v1/u/:battleTag" do |env|
     parsed = XML.parse_html(env.get("data").as(String))
     parse_profile(parsed, env.get("mode")).to_json
   end
 
-  get "/api/u/:battleTag/heroes" do |env|
+  get "/api/v1/u/:battleTag/heroes" do |env|
     parsed = XML.parse_html(env.get("data").as(String))
     parse_heroes(parsed, env.get("mode")).to_json
   end
 
-  get "/api/u/:battleTag/heroes/:hero" do |env|
+  get "/api/v1/u/:battleTag/heroes/:hero" do |env|
     heroParamsCount, heroes = Cowapi.split_hero_params(env.params.url["hero"])
     next jsonify_error("One or more hero names not found! Check your spelling.") unless heroes.size == heroParamsCount
 
