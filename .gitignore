@@ -1,8 +1,4 @@
-*.rdb
 .DS_Store
 
-cowapi
-/doc/
-/lib/
-/bin/
-/.shards/
+/.shards
+css/.sass-cache
