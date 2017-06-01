@@ -1,4 +1,16 @@
 $(document).ready(function() {
+  var menuToggle = $("#js-navigation-centered-mobile-menu").unbind();
+  $("#js-navigation-centered-menu").removeClass("show");
+  
+  menuToggle.on("click", function(e) {
+    e.preventDefault();
+    $("#js-navigation-centered-menu").slideToggle(function(){
+      if($("#js-navigation-centered-menu").is(":hidden")) {
+        $("#js-navigation-centered-menu").removeAttr("style");
+      }
+    });
+  });
+
   $(".js-vertical-tab-content").hide();
   $(".js-vertical-tab-content:first").show();
 
@@ -31,5 +43,4 @@ $(document).ready(function() {
     $(".js-vertical-tab").removeClass("is-active");
     $(".js-vertical-tab[rel^='"+accordion_activeTab+"']").addClass("is-active");
   });
-  hljs.initHighlightingOnLoad();
 });

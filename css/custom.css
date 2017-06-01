@@ -209,112 +209,200 @@ body {
   font-family: 'Work Sans', sans-serif;
   background-color: #f8f8f8; }
 
+code {
+  background-color: #ebebeb;
+  padding: 2px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block; }
+
 a, a:hover {
   color: #16a085; }
 
 a:hover {
   text-decoration: underline; }
 
-h1 {
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding-top: 25px;
-  margin-bottom: 15px; }
+hr {
+  padding-top: 30px; }
 
-#navigation {
-  padding-top: 5px; }
-  #navigation::after {
-    clear: both;
-    content: "";
-    display: block; }
-  #navigation #container {
-    max-width: 70vw;
-    margin: 0 auto;
-    height: 40px; }
-    #navigation #container::after {
+.nav-logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: black; }
+
+.navigation-centered {
+  width: 100%; }
+  .navigation-centered .mobile-logo {
+    display: inline;
+    float: left; }
+    @media only screen and (min-width: 900px) {
+      .navigation-centered .mobile-logo {
+        display: none; } }
+    .navigation-centered .mobile-logo img {
+      max-height: 2em; }
+  .navigation-centered .navigation-centered-mobile-menu {
+    float: right;
+    padding-top: 0.5em;
+    padding-right: 1em; }
+    .navigation-centered .navigation-centered-mobile-menu:focus {
+      outline: none; }
+    @media only screen and (min-width: 900px) {
+      .navigation-centered .navigation-centered-mobile-menu {
+        display: none; } }
+  .navigation-centered .navigation-centered-wrapper {
+    position: relative; }
+    .navigation-centered .navigation-centered-wrapper::after {
       clear: both;
       content: "";
       display: block; }
-    #navigation #container #nav {
-      text-align: center;
-      line-height: 40px;
-      max-width: 70vw;
-      margin: 0 auto;
-      float: none; }
-      #navigation #container #nav ul {
-        display: inline-block;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        margin: 0 auto;
-        text-align: center;
-        font-size: 2em;
-        line-height: 40px; }
-        #navigation #container #nav ul li {
-          display: inline-block;
-          position: relative;
-          margin: 0 8px 0 0;
-          padding: 0; }
-          #navigation #container #nav ul li:last-of-type {
-            margin-right: 0; }
-          #navigation #container #nav ul li a {
-            display: inline-block; }
-            #navigation #container #nav ul li a:hover {
-              cursor: pointer;
-              cursor: hand; }
-        #navigation #container #nav ul #title {
-          font-weight: bold; }
-        #navigation #container #nav ul li {
-          font-weight: 300; }
+    .navigation-centered .navigation-centered-wrapper::after {
+      clear: both;
+      content: "";
+      display: block; }
+  .navigation-centered ul.navigation-centered-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%; }
+    .navigation-centered ul.navigation-centered-menu.show {
+      display: block; }
+    @media only screen and (min-width: 900px) {
+      .navigation-centered ul.navigation-centered-menu {
+        display: block;
+        text-align: center; } }
+  .navigation-centered ul li.nav-link {
+    display: block;
+    text-align: right;
+    width: 100%; }
+    .navigation-centered ul li.nav-link a {
+      display: inline-block;
+      padding-right: 1em;
+      text-decoration: none; }
+      .navigation-centered ul li.nav-link a:focus {
+        outline: none; }
+      .navigation-centered ul li.nav-link a:hover {
+        text-decoration: underline; }
+    @media only screen and (min-width: 900px) {
+      .navigation-centered ul li.nav-link {
+        display: inline; }
+        .navigation-centered ul li.nav-link a {
+          padding-right: 1em; } }
+  .navigation-centered li.logo.nav-link {
+    display: none;
+    line-height: 0; }
+    @media only screen and (min-width: 900px) {
+      .navigation-centered li.logo.nav-link {
+        display: inline; } }
+  .navigation-centered .logo img {
+    margin-bottom: -0.66667em;
+    max-height: 2em; }
 
-section#endpoints::after {
-  clear: both;
-  content: "";
-  display: block; }
-section#endpoints .vertical-tabs-container {
-  width: calc(100% - 40px);
-  float: left;
-  margin-left: 20px;
-  float: none;
-  max-width: 70vw;
-  margin-left: auto;
-  margin-right: auto; }
-  section#endpoints .vertical-tabs-container::after {
+section#readme {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-top: 30px; }
+  section#readme::after {
     clear: both;
     content: "";
     display: block; }
-  section#endpoints .vertical-tabs-container .vertical-tabs {
-    display: none; }
-    @media (min-device-width: 600px) {
-      section#endpoints .vertical-tabs-container .vertical-tabs {
-        display: inline;
-        float: left;
-        height: 1000px;
-        width: 20%; } }
-  section#endpoints .vertical-tabs-container .js-vertical-tab:hover, section#endpoints .vertical-tabs-container .js-vertical-tab:focus, section#endpoints .vertical-tabs-container .vertical-tab:hover, section#endpoints .vertical-tabs-container .vertical-tab:focus {
+  @media (max-device-width: 480px) {
+    section#readme {
+      max-width: 85vw; } }
+  @media (max-device-width: 600px) {
+    section#readme {
+      max-width: 75vw; } }
+  section#readme #text {
+    width: calc(83.33333% - 36.66667px);
+    float: left;
+    margin-left: 20px;
+    max-width: 99%;
+    margin: 0 auto;
+    float: none !important;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif; }
+    section#readme #text h1 {
+      font-size: 1.5em; }
+    section#readme #text h2 {
+      font-weight: normal;
+      text-decoration: underline; }
+
+section#endpoints .vertical-tabs-container::after {
+  clear: both;
+  content: "";
+  display: block; }
+section#endpoints .vertical-tabs-container::after {
+  clear: both;
+  content: "";
+  display: block; }
+section#endpoints .vertical-tabs-container li {
+  list-style: none; }
+section#endpoints .vertical-tabs-container h1 {
+  text-decoration: underline; }
+section#endpoints .vertical-tabs-container a {
+  text-decoration: none; }
+  section#endpoints .vertical-tabs-container a:hover {
+    text-decoration: underline; }
+section#endpoints .vertical-tabs-container .vertical-tabs {
+  padding-top: 50px;
+  width: calc(25% - 25px);
+  float: left;
+  margin-left: 20px;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  display: none; }
+  section#endpoints .vertical-tabs-container .vertical-tabs a.is-active {
+    font-weight: bold; }
+  @media only screen and (min-width: 600px) {
+    section#endpoints .vertical-tabs-container .vertical-tabs {
+      display: inline;
+      float: left;
+      height: 18.75em;
+      width: 20%; } }
+@media only screen and (min-width: 600px) {
+  section#endpoints .vertical-tabs-container .vertical-tab {
+    display: block;
+    margin-right: -1px;
+    padding: 5px 0px; }
+    section#endpoints .vertical-tabs-container .vertical-tab.is-active {
+      margin-right: -1px; } }
+section#endpoints .vertical-tabs-container a.vertical-tab-accordion-heading,
+section#endpoints .vertical-tabs-container a.vertical-tab {
+  color: #333; }
+section#endpoints .vertical-tabs-container .vertical-tab:focus {
+  outline: none; }
+section#endpoints .vertical-tabs-container .vertical-tab-content-container {
+  width: calc(75% - 35px);
+  float: left;
+  margin-left: 20px; }
+  section#endpoints .vertical-tabs-container .vertical-tab-content-container a:focus {
     outline: none; }
-  @media (min-device-width: 600px) {
-    section#endpoints .vertical-tabs-container .vertical-tab {
-      display: block; } }
-  section#endpoints .vertical-tabs-container .vertical-tab-content-container {
-    display: block; }
-    @media (min-device-width: 600px) {
-      section#endpoints .vertical-tabs-container .vertical-tab-content-container {
-        width: 80%;
-        height: 1000px;
-        display: inline-block; } }
-  @media (min-device-width: 600px) {
-    section#endpoints .vertical-tabs-container .vertical-tab-content {
-      display: none; } }
+  @media only screen and (min-width: 600px) {
+    section#endpoints .vertical-tabs-container .vertical-tab-content-container {
+      height: 18.75em;
+      display: inline-block; } }
+section#endpoints .vertical-tabs-container .vertical-tab-content {
+  padding: 1.5em 10px; }
+  section#endpoints .vertical-tabs-container .vertical-tab-content p {
+    color: #333;
+    line-height: 1.5; }
   section#endpoints .vertical-tabs-container .vertical-tab-content pre code {
-    white-space: pre-wrap; }
-  section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading {
-    cursor: pointer;
-    display: block; }
-    @media (min-device-width: 600px) {
-      section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading {
-        display: none; } }
+    background-color: #eeeeee; }
+  @media only screen and (min-width: 600px) {
+    section#endpoints .vertical-tabs-container .vertical-tab-content {
+      border: 0;
+      display: none; } }
+section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading {
+  cursor: pointer;
+  display: block;
+  padding: 0.75em 5px; }
+  section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading:focus, section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading:hover {
+    color: #1565c0; }
+  section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading:first-child {
+    border-top: 0; }
+  section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading.is-active {
+    border-bottom: 0; }
+  @media only screen and (min-width: 600px) {
+    section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading {
+      display: none; } }
 
 /*# sourceMappingURL=custom.css.map */

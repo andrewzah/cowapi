@@ -49,79 +49,207 @@ body {
   background-color: rgb(248, 248, 248);
 }
 
+code {
+  background-color: rgb(235, 235, 235);
+  padding: 2px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
 a, a:hover {
   color: $mainColor;
 }
 a:hover {
   text-decoration: underline;
 }
-h1 {
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center;
-  font-family: 'Work Sans', $font-stack-system;
-  padding-top: 25px;
-  margin-bottom: 15px;
+
+hr {
+  padding-top: 30px;
 }
 
-#navigation {
-  @include grid-container;
-  $nav-height: 40px;
-  padding-top: 5px;
+.nav-logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
 
-  #container {
+.navigation-centered {
+  $large-screen: 50em !default;
+  $centered-navigation-height: 60px;
+  $centered-navigation-logo-height: 2em;
+
+  width: 100%;
+
+  // Mobile view
+  .mobile-logo {
+    display: inline;
+    float: left;
+    
+    @include grid-media((media: $large-screen)) {
+      display: none;
+    }
+
+    img {
+      max-height: $centered-navigation-logo-height;
+    }
+  }
+
+  .navigation-centered-mobile-menu {
+    float: right;
+    padding-top: 0.5em;
+    padding-right: 1em;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include grid-media((media: $large-screen)) {
+      display: none;
+    }
+  }
+
+  // Nav menu
+  .navigation-centered-wrapper {
+    @include clearfix;
     @include grid-container;
-    max-width: 70vw;
-    @include margin(0 auto);
+    position: relative;
+  }
 
-    height: $nav-height;
+  ul.navigation-centered-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
 
-    #nav {
+    &.show {
+      display: block;
+    }
+
+    @include grid-media((media: $large-screen)) {
+      display: block;
       text-align: center;
-      line-height: $nav-height;
-      max-width: 70vw;
-      margin: 0 auto;
-      float: none; 
+    }
+  }
 
-      ul {
-        @include horizontal-list;
-        @include margin(0 auto);
+  // Nav items
+  ul li.nav-link {
+    display: block;
+    text-align: right;
+    width: 100%;
 
-        text-align: center;
-        font-size: 2em;
-        line-height: $nav-height;
-
-        #title {
-          font-weight: bold;
-        }
-
-        li {
-          font-weight: 300;
-        }
+    a {
+      display: inline-block;
+      padding-right: 1em;
+      text-decoration: none;
+      &:focus {
+        outline: none;
       }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @include grid-media((media: $large-screen)) {
+      display: inline;
+
+      a {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  // Centered logo
+  li.logo.nav-link {
+    display: none;
+    line-height: 0;
+
+    @include grid-media((media: $large-screen)) {
+      display: inline;
+    }
+  }
+
+  .logo img {
+    margin-bottom: -$centered-navigation-logo-height / 3;
+    max-height: $centered-navigation-logo-height;
+  }
+}
+
+
+section#readme{
+  @include grid-container;
+  @media (max-device-width: 480px) {
+    max-width: 85vw;
+  }
+  @media (max-device-width: $medium-screen) {
+    max-width: 75vw;
+  }
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-top: 30px;
+
+  #text {
+    @include grid-column(10);
+    max-width: 99%;
+    margin: 0 auto;
+    float: none !important;
+    font-family: 'Work Sans', $font-stack-system;
+
+    h1 {
+      font-size: 1.5em;
+    }
+    h2 {
+      font-weight: normal;
+      text-decoration: underline;
     }
   }
 }
 
 section#endpoints {
-  @include grid-container;
   .vertical-tabs-container {
+    @include grid-container;
+
+    $base-border-color: gainsboro !default;
+    $base-border-radius: 3px !default;
+    $base-background-color: white !default;
+    $base-line-height: 1.5em !default;
+    $base-spacing: 1.5em !default;
+    $medium-screen: 40em !default;
+    $vertical-tabs-height: 18.75em;
+    $vertical-tab-mode: $medium-screen;
+    $media: (media: $vertical-tab-mode);
+    $gutter: 10px;
+
     @include clearfix;
-    @include grid-column(12);
 
-    float: none;
-    max-width: 70vw;
-    margin-left: auto;
-    margin-right: auto;
+    li {
+      list-style: none;
+    }
+    
+    h1 {
+      text-decoration: underline;
+    }
 
-    $medium-screen: 30em !default;
-    $vertical-tabs-height: 1000px;
-
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
 
     .vertical-tabs {
-      display: none;
+      padding-top: 50px;
+      @include grid-column(3);
 
-      @media (min-device-width: $medium-screen) {
+      font-family: 'Work Sans', $font-stack-system;
+      display: none;
+      a.is-active {
+        font-weight: bold;
+      }
+
+      @include grid-media($media) {
         display: inline;
         float: left;
         height: $vertical-tabs-height;
@@ -129,42 +257,76 @@ section#endpoints {
       }
     }
 
-    .js-vertical-tab, .vertical-tab {
-      &:hover, &:focus {
-        outline: none;
+    .vertical-tab {
+      @include grid-media($media) {
+        display: block;
+        margin-right: -1px;
+        padding: 5px 0px;
+
+        &.is-active {
+          margin-right: -1px;
+        }
       }
     }
 
-    .vertical-tab {
-      @media (min-device-width: $medium-screen) {
-        display: block;
-      }
+    a.vertical-tab-accordion-heading,
+    a.vertical-tab {
+      color: $dark-gray;
+    }
+
+    .vertical-tab:focus {
+      outline: none;
     }
 
     .vertical-tab-content-container {
-      display: block;
+      @include grid-column(9);
 
-      @media (min-device-width: $medium-screen) {
-        width: 80%;
+      & a:focus {
+        outline: none;
+      }
+
+      @include grid-media($media) {
         height: $vertical-tabs-height;
         display: inline-block;
       }
     }
 
     .vertical-tab-content {
-      @media (min-device-width: $medium-screen) {
-        display: none;
+      padding: $base-spacing $gutter;
+
+      p {
+        color: $base-font-color;
+        line-height: $base-line-height;
       }
       pre code {
-        white-space: pre-wrap;
+        background-color: rgb(238, 238, 238);
+      }
+
+      @include grid-media($media) {
+        border: 0;
+        display: none;
       }
     }
 
     .vertical-tab-accordion-heading {
       cursor: pointer;
       display: block;
+      padding: $base-spacing / 2 $gutter / 2;
 
-      @media (min-device-width: $medium-screen) {
+      &:focus,
+      &:hover {
+        color: $action-color;
+      }
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      &.is-active {
+        border-bottom: 0;
+      }
+
+      @include grid-media($media) {
         display: none;
       }
     }
