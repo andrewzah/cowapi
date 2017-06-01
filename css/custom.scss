@@ -5,7 +5,7 @@
 @import "bourbon/_bourbon";
 @import "base/base";
 @import "neat/neat";
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300, 400,700');
 
 /* azah.github.io/cowapi
  * 
@@ -16,6 +16,7 @@
 // Colors
 $river: rgb(52, 152, 219);
 $darkgrey: rgb(80, 80, 80);
+$mainColor: rgb(22, 160, 133);
 
 // Vars
 $medium-screen: 600px;
@@ -44,44 +45,128 @@ $large-screen: 900px;
 }
 
 body {
+  font-family: 'Work Sans', sans-serif;
   background-color: rgb(248, 248, 248);
+}
+
+a, a:hover {
+  color: $mainColor;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Work Sans', $font-stack-system;
+  padding-top: 25px;
+  margin-bottom: 15px;
 }
 
 #navigation {
   @include grid-container;
-  @include border-style(null null solid);
-  @include border-color(null null $river);
-  @include border-width(null null 4px);
-
-  $nav-height: 80px;
+  $nav-height: 40px;
+  padding-top: 5px;
 
   #container {
+    @include grid-container;
     max-width: 70vw;
     @include margin(0 auto);
 
     height: $nav-height;
 
-    #title {
+    #nav {
+      text-align: center;
       line-height: $nav-height;
-      @include grid-column(6);
+      max-width: 70vw;
+      margin: 0 auto;
+      float: none; 
 
-      span {
-        vertical-align: middle;
-        display: inline-block;
-        font-size: modular-scale(4);
-        font-weight: bold;
-        line-height: normal;
-        padding-bottom: 5px;
+      ul {
+        @include horizontal-list;
+        @include margin(0 auto);
+
+        text-align: center;
+        font-size: 2em;
+        line-height: $nav-height;
+
+        #title {
+          font-weight: bold;
+        }
+
+        li {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+section#endpoints {
+  @include grid-container;
+  .vertical-tabs-container {
+    @include clearfix;
+    @include grid-column(12);
+
+    float: none;
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    $medium-screen: 30em !default;
+    $vertical-tabs-height: 1000px;
+
+
+    .vertical-tabs {
+      display: none;
+
+      @media (min-device-width: $medium-screen) {
+        display: inline;
+        float: left;
+        height: $vertical-tabs-height;
+        width: 20%;
       }
     }
 
-    #links {
-      font-size: modular-scale(2);
-      font-weight: thin;
-      line-height: $nav-height;
-      @include grid-column(4);
-      @include horizontal-list;
-      float: right;
+    .js-vertical-tab, .vertical-tab {
+      &:hover, &:focus {
+        outline: none;
+      }
+    }
+
+    .vertical-tab {
+      @media (min-device-width: $medium-screen) {
+        display: block;
+      }
+    }
+
+    .vertical-tab-content-container {
+      display: block;
+
+      @media (min-device-width: $medium-screen) {
+        width: 80%;
+        height: $vertical-tabs-height;
+        display: inline-block;
+      }
+    }
+
+    .vertical-tab-content {
+      @media (min-device-width: $medium-screen) {
+        display: none;
+      }
+      pre code {
+        white-space: pre-wrap;
+      }
+    }
+
+    .vertical-tab-accordion-heading {
+      cursor: pointer;
+      display: block;
+
+      @media (min-device-width: $medium-screen) {
+        display: none;
+      }
     }
   }
 }
