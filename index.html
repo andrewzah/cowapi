@@ -17,12 +17,11 @@
         <nav role="navigation">
           <ul id="js-navigation-centered-menu" class="navigation-centered-menu show">
             <li class="nav-link logo">
-              <a href="javascript:void(0)" class="logo">
-                <h1 class="nav-logo"> Test </h1>
-              </a>
+              <h1 class="nav-logo"> cowapi </h1>
             </li>
-            <li class="nav-link"><a href="javascript:void(0)">readme</a></li>
-            <li class="nav-link"><a href="javascript:void(0)">endpoints</a></li>
+            <li class="nav-link"><a class="scroll-on-page-link" href="#scroll-readme">readme</a></li>
+            <li class="nav-link"><a class="scroll-on-page-link" href="#scroll-endpoints">endpoints</a></li>
+            <li class="nav-link"><a href="https://github.com/azah/cowapi">github</a></li>
           </ul>
         </nav>
       </div>
@@ -30,7 +29,7 @@
 
     <section id="readme">
       <div id="text">
-        <h1> About this project</h1>
+        <h1 id="scroll-readme"> About this project</h1>
         <p> cowapi is an open source JSON Rest API for Overwatch statistics. </p>
         <p> It's written in Crystal, built on top of Kemal &amp; Redis. </p>
 
@@ -53,7 +52,7 @@
     <section id="endpoints">
      <div class="vertical-tabs-container">
       <div class="vertical-tabs">
-        <h1>/v1/u/:tag</h1>
+        <h1 id="scroll-endpoints">/v1/u/:tag</h1>
         <a id="pad-bottom" href="javascript:void(0)" class="js-vertical-tab vertical-tab is-active" rel="tab1">/</a>
         <a href="javascript:void(0)" class="js-vertical-tab vertical-tab" rel="tab2">/heroes</a>
         <a href="javascript:void(0)" class="js-vertical-tab vertical-tab" rel="tab3">/heroes/:h1+h2+hN</a>

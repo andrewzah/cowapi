@@ -228,7 +228,8 @@ hr {
 .nav-logo {
   font-weight: 700;
   text-decoration: none;
-  color: black; }
+  color: black;
+  padding-top: 5px; }
 
 .navigation-centered {
   width: 100%; }
@@ -276,13 +277,14 @@ hr {
     display: block;
     text-align: right;
     width: 100%; }
-    .navigation-centered ul li.nav-link a {
+    .navigation-centered ul li.nav-link a, .navigation-centered ul li.nav-link h1 {
       display: inline-block;
       padding-right: 1em;
-      text-decoration: none; }
-      .navigation-centered ul li.nav-link a:focus {
+      text-decoration: none;
+      font-size: 1.3em; }
+      .navigation-centered ul li.nav-link a:focus, .navigation-centered ul li.nav-link h1:focus {
         outline: none; }
-      .navigation-centered ul li.nav-link a:hover {
+      .navigation-centered ul li.nav-link a:hover, .navigation-centered ul li.nav-link h1:hover {
         text-decoration: underline; }
     @media only screen and (min-width: 900px) {
       .navigation-centered ul li.nav-link {
