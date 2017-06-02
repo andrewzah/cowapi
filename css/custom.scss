@@ -182,11 +182,8 @@ hr {
 
 section#readme{
   @include grid-container;
-  @media (max-device-width: 480px) {
-    max-width: 85vw;
-  }
-  @media (max-device-width: $medium-screen) {
-    max-width: 75vw;
+  @media (max-device-width: $large-screen) {
+    max-width: 95vw;
   }
   max-width: 80vw;
   margin: 0 auto;
@@ -210,126 +207,136 @@ section#readme{
 }
 
 section#endpoints {
-  .vertical-tabs-container {
-    @include grid-container;
+  div {
+    .vertical-tabs-container {
+      @include grid-container;
+      @media (min-device-width: $large-screen) {
+        max-width: 75vw;
+      }
+      @media (max-device-width: $large-screen - 1) {
+      max-width: 95vw;
+      }
+      margin: 0 auto;
 
-    $base-border-color: gainsboro !default;
-    $base-border-radius: 3px !default;
-    $base-background-color: white !default;
-    $base-line-height: 1.5em !default;
-    $base-spacing: 1.5em !default;
-    $medium-screen: 40em !default;
-    $vertical-tabs-height: 18.75em;
-    $vertical-tab-mode: $medium-screen;
-    $media: (media: $vertical-tab-mode);
-    $gutter: 10px;
+      $base-border-color: gainsboro !default;
+      $base-border-radius: 3px !default;
+      $base-background-color: white !default;
+      $base-line-height: 1.5em !default;
+      $base-spacing: 1.5em !default;
+      $vertical-tabs-height: 18.75em;
+      $vertical-tab-mode: $medium-screen;
+      $media: (media: $vertical-tab-mode);
+      $gutter: 10px;
 
-    @include clearfix;
+      @include clearfix;
 
-    li {
-      list-style: none;
-    }
-    
-    h1 {
-      text-decoration: underline;
-    }
-
-    a {
-      text-decoration: none;
-      &:hover {
+      li {
+        list-style: none;
+      }
+      
+      h1 {
         text-decoration: underline;
       }
-    }
 
-    .vertical-tabs {
-      padding-top: 50px;
-      @include grid-column(3);
-
-      font-family: 'Work Sans', $font-stack-system;
-      display: none;
-      a.is-active {
-        font-weight: bold;
-      }
-
-      @include grid-media($media) {
-        display: inline;
-        float: left;
-        height: $vertical-tabs-height;
-        width: 20%;
-      }
-    }
-
-    .vertical-tab {
-      @include grid-media($media) {
-        display: block;
-        margin-right: -1px;
-        padding: 5px 0px;
-
-        &.is-active {
-          margin-right: -1px;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
         }
       }
-    }
 
-    a.vertical-tab-accordion-heading,
-    a.vertical-tab {
-      color: $dark-gray;
-    }
+      .vertical-tabs {
+        padding-top: 50px;
+        @include grid-column(2);
 
-    .vertical-tab:focus {
-      outline: none;
-    }
+        font-family: 'Work Sans', $font-stack-system;
+        display: none;
+        a.is-active {
+          font-weight: bold;
+        }
 
-    .vertical-tab-content-container {
-      @include grid-column(9);
+        @include grid-media($media) {
+          display: inline;
+          float: left;
+          height: $vertical-tabs-height;
+          width: 20%;
+        }
+      }
 
-      & a:focus {
+      .vertical-tab {
+        @include grid-media($media) {
+          display: block;
+          margin-right: -1px;
+          padding: 10px 0px;
+
+
+          &.is-active {
+            margin-right: -1px;
+          }
+        }
+      }
+
+      a.vertical-tab-accordion-heading,
+      a.vertical-tab {
+        color: $dark-gray;
+        border-bottom: 1px solid #cecece;
+      }
+
+      .vertical-tab:focus {
         outline: none;
       }
 
-      @include grid-media($media) {
-        height: $vertical-tabs-height;
-        display: inline-block;
-      }
-    }
+      .vertical-tab-content-container {
+        @include grid-column(9);
 
-    .vertical-tab-content {
-      padding: $base-spacing $gutter;
+        & a:focus {
+          outline: none;
+        }
 
-      p {
-        color: $base-font-color;
-        line-height: $base-line-height;
-      }
-      pre code {
-        background-color: rgb(238, 238, 238);
+        @include grid-media($media) {
+          height: $vertical-tabs-height;
+          display: inline-block;
+        }
       }
 
-      @include grid-media($media) {
-        border: 0;
-        display: none;
-      }
-    }
+      .vertical-tab-content {
+        padding: $base-spacing $gutter;
 
-    .vertical-tab-accordion-heading {
-      cursor: pointer;
-      display: block;
-      padding: $base-spacing / 2 $gutter / 2;
+        p {
+          color: $base-font-color;
+          line-height: $base-line-height;
+        }
+        pre code {
+          background-color: rgb(238, 238, 238);
+        }
 
-      &:focus,
-      &:hover {
-        color: $action-color;
-      }
-
-      &:first-child {
-        border-top: 0;
+        @include grid-media($media) {
+          border: 0;
+          display: none;
+        }
       }
 
-      &.is-active {
-        border-bottom: 0;
-      }
+      .vertical-tab-accordion-heading {
+        cursor: pointer;
+        display: block;
+        padding: $base-spacing / 2 $gutter / 2;
 
-      @include grid-media($media) {
-        display: none;
+        &:focus,
+        &:hover {
+          color: $action-color;
+        }
+
+        &:first-child {
+          border-top: 0;
+        }
+
+        &.is-active {
+          border-bottom: 0;
+        }
+
+        @include grid-media($media) {
+          display: none;
+        }
       }
     }
   }

@@ -309,12 +309,9 @@ section#readme {
     clear: both;
     content: "";
     display: block; }
-  @media (max-device-width: 480px) {
+  @media (max-device-width: 900px) {
     section#readme {
-      max-width: 85vw; } }
-  @media (max-device-width: 600px) {
-    section#readme {
-      max-width: 75vw; } }
+      max-width: 95vw; } }
   section#readme #text {
     width: calc(83.33333% - 36.66667px);
     float: left;
@@ -329,82 +326,91 @@ section#readme {
       font-weight: normal;
       text-decoration: underline; }
 
-section#endpoints .vertical-tabs-container::after {
-  clear: both;
-  content: "";
-  display: block; }
-section#endpoints .vertical-tabs-container::after {
-  clear: both;
-  content: "";
-  display: block; }
-section#endpoints .vertical-tabs-container li {
-  list-style: none; }
-section#endpoints .vertical-tabs-container h1 {
-  text-decoration: underline; }
-section#endpoints .vertical-tabs-container a {
-  text-decoration: none; }
-  section#endpoints .vertical-tabs-container a:hover {
+section#endpoints div .vertical-tabs-container {
+  margin: 0 auto; }
+  section#endpoints div .vertical-tabs-container::after {
+    clear: both;
+    content: "";
+    display: block; }
+  @media (min-device-width: 900px) {
+    section#endpoints div .vertical-tabs-container {
+      max-width: 75vw; } }
+  @media (max-device-width: 899px) {
+    section#endpoints div .vertical-tabs-container {
+      max-width: 95vw; } }
+  section#endpoints div .vertical-tabs-container::after {
+    clear: both;
+    content: "";
+    display: block; }
+  section#endpoints div .vertical-tabs-container li {
+    list-style: none; }
+  section#endpoints div .vertical-tabs-container h1 {
     text-decoration: underline; }
-section#endpoints .vertical-tabs-container .vertical-tabs {
-  padding-top: 50px;
-  width: calc(25% - 25px);
-  float: left;
-  margin-left: 20px;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  display: none; }
-  section#endpoints .vertical-tabs-container .vertical-tabs a.is-active {
-    font-weight: bold; }
+  section#endpoints div .vertical-tabs-container a {
+    text-decoration: none; }
+    section#endpoints div .vertical-tabs-container a:hover {
+      text-decoration: underline; }
+  section#endpoints div .vertical-tabs-container .vertical-tabs {
+    padding-top: 50px;
+    width: calc(16.66667% - 23.33333px);
+    float: left;
+    margin-left: 20px;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+    display: none; }
+    section#endpoints div .vertical-tabs-container .vertical-tabs a.is-active {
+      font-weight: bold; }
+    @media only screen and (min-width: 600px) {
+      section#endpoints div .vertical-tabs-container .vertical-tabs {
+        display: inline;
+        float: left;
+        height: 18.75em;
+        width: 20%; } }
   @media only screen and (min-width: 600px) {
-    section#endpoints .vertical-tabs-container .vertical-tabs {
-      display: inline;
-      float: left;
-      height: 18.75em;
-      width: 20%; } }
-@media only screen and (min-width: 600px) {
-  section#endpoints .vertical-tabs-container .vertical-tab {
-    display: block;
-    margin-right: -1px;
-    padding: 5px 0px; }
-    section#endpoints .vertical-tabs-container .vertical-tab.is-active {
-      margin-right: -1px; } }
-section#endpoints .vertical-tabs-container a.vertical-tab-accordion-heading,
-section#endpoints .vertical-tabs-container a.vertical-tab {
-  color: #333; }
-section#endpoints .vertical-tabs-container .vertical-tab:focus {
-  outline: none; }
-section#endpoints .vertical-tabs-container .vertical-tab-content-container {
-  width: calc(75% - 35px);
-  float: left;
-  margin-left: 20px; }
-  section#endpoints .vertical-tabs-container .vertical-tab-content-container a:focus {
-    outline: none; }
-  @media only screen and (min-width: 600px) {
-    section#endpoints .vertical-tabs-container .vertical-tab-content-container {
-      height: 18.75em;
-      display: inline-block; } }
-section#endpoints .vertical-tabs-container .vertical-tab-content {
-  padding: 1.5em 10px; }
-  section#endpoints .vertical-tabs-container .vertical-tab-content p {
+    section#endpoints div .vertical-tabs-container .vertical-tab {
+      display: block;
+      margin-right: -1px;
+      padding: 10px 0px; }
+      section#endpoints div .vertical-tabs-container .vertical-tab.is-active {
+        margin-right: -1px; } }
+  section#endpoints div .vertical-tabs-container a.vertical-tab-accordion-heading,
+  section#endpoints div .vertical-tabs-container a.vertical-tab {
     color: #333;
-    line-height: 1.5; }
-  section#endpoints .vertical-tabs-container .vertical-tab-content pre code {
-    background-color: #eeeeee; }
-  @media only screen and (min-width: 600px) {
-    section#endpoints .vertical-tabs-container .vertical-tab-content {
-      border: 0;
-      display: none; } }
-section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading {
-  cursor: pointer;
-  display: block;
-  padding: 0.75em 5px; }
-  section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading:focus, section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading:hover {
-    color: #1565c0; }
-  section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading:first-child {
-    border-top: 0; }
-  section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading.is-active {
-    border-bottom: 0; }
-  @media only screen and (min-width: 600px) {
-    section#endpoints .vertical-tabs-container .vertical-tab-accordion-heading {
-      display: none; } }
+    border-bottom: 1px solid #cecece; }
+  section#endpoints div .vertical-tabs-container .vertical-tab:focus {
+    outline: none; }
+  section#endpoints div .vertical-tabs-container .vertical-tab-content-container {
+    width: calc(75% - 35px);
+    float: left;
+    margin-left: 20px; }
+    section#endpoints div .vertical-tabs-container .vertical-tab-content-container a:focus {
+      outline: none; }
+    @media only screen and (min-width: 600px) {
+      section#endpoints div .vertical-tabs-container .vertical-tab-content-container {
+        height: 18.75em;
+        display: inline-block; } }
+  section#endpoints div .vertical-tabs-container .vertical-tab-content {
+    padding: 1.5em 10px; }
+    section#endpoints div .vertical-tabs-container .vertical-tab-content p {
+      color: #333;
+      line-height: 1.5; }
+    section#endpoints div .vertical-tabs-container .vertical-tab-content pre code {
+      background-color: #eeeeee; }
+    @media only screen and (min-width: 600px) {
+      section#endpoints div .vertical-tabs-container .vertical-tab-content {
+        border: 0;
+        display: none; } }
+  section#endpoints div .vertical-tabs-container .vertical-tab-accordion-heading {
+    cursor: pointer;
+    display: block;
+    padding: 0.75em 5px; }
+    section#endpoints div .vertical-tabs-container .vertical-tab-accordion-heading:focus, section#endpoints div .vertical-tabs-container .vertical-tab-accordion-heading:hover {
+      color: #1565c0; }
+    section#endpoints div .vertical-tabs-container .vertical-tab-accordion-heading:first-child {
+      border-top: 0; }
+    section#endpoints div .vertical-tabs-container .vertical-tab-accordion-heading.is-active {
+      border-bottom: 0; }
+    @media only screen and (min-width: 600px) {
+      section#endpoints div .vertical-tabs-container .vertical-tab-accordion-heading {
+        display: none; } }
 
 /*# sourceMappingURL=custom.css.map */
