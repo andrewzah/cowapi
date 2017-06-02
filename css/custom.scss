@@ -54,7 +54,18 @@ code {
   padding: 2px;
   border-radius: 4px;
   margin-bottom: 10px;
-  display: inline-block;
+
+}
+
+code.inline {
+  @media (max-device-width: $medium-screen) {
+    max-width: 99%;
+    overflow-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+  }
 }
 
 a, a:hover {
@@ -279,7 +290,8 @@ section#endpoints {
       a.vertical-tab-accordion-heading,
       a.vertical-tab {
         color: $dark-gray;
-        border-bottom: 1px solid #cecece;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
       }
 
       .vertical-tab:focus {
@@ -300,7 +312,12 @@ section#endpoints {
       }
 
       .vertical-tab-content {
-        padding: $base-spacing $gutter;
+        @media (max-device-width: $medium-screen) {
+          pre code {
+            width: 80vw;
+            margin: 0 auto;
+          }
+        }
 
         p {
           color: $base-font-color;

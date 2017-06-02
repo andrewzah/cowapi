@@ -213,8 +213,15 @@ code {
   background-color: #ebebeb;
   padding: 2px;
   border-radius: 4px;
-  margin-bottom: 10px;
-  display: inline-block; }
+  margin-bottom: 10px; }
+
+@media (max-device-width: 600px) {
+  code.inline {
+    max-width: 99%;
+    overflow-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; } }
 
 a, a:hover {
   color: #16a085; }
@@ -375,7 +382,8 @@ section#endpoints div .vertical-tabs-container {
   section#endpoints div .vertical-tabs-container a.vertical-tab-accordion-heading,
   section#endpoints div .vertical-tabs-container a.vertical-tab {
     color: #333;
-    border-bottom: 1px solid #cecece; }
+    padding-bottom: 0px;
+    margin-bottom: 0px; }
   section#endpoints div .vertical-tabs-container .vertical-tab:focus {
     outline: none; }
   section#endpoints div .vertical-tabs-container .vertical-tab-content-container {
@@ -388,17 +396,19 @@ section#endpoints div .vertical-tabs-container {
       section#endpoints div .vertical-tabs-container .vertical-tab-content-container {
         height: 18.75em;
         display: inline-block; } }
-  section#endpoints div .vertical-tabs-container .vertical-tab-content {
-    padding: 1.5em 10px; }
-    section#endpoints div .vertical-tabs-container .vertical-tab-content p {
-      color: #333;
-      line-height: 1.5; }
+  @media (max-device-width: 600px) {
     section#endpoints div .vertical-tabs-container .vertical-tab-content pre code {
-      background-color: #eeeeee; }
-    @media only screen and (min-width: 600px) {
-      section#endpoints div .vertical-tabs-container .vertical-tab-content {
-        border: 0;
-        display: none; } }
+      width: 80vw;
+      margin: 0 auto; } }
+  section#endpoints div .vertical-tabs-container .vertical-tab-content p {
+    color: #333;
+    line-height: 1.5; }
+  section#endpoints div .vertical-tabs-container .vertical-tab-content pre code {
+    background-color: #eeeeee; }
+  @media only screen and (min-width: 600px) {
+    section#endpoints div .vertical-tabs-container .vertical-tab-content {
+      border: 0;
+      display: none; } }
   section#endpoints div .vertical-tabs-container .vertical-tab-accordion-heading {
     cursor: pointer;
     display: block;
