@@ -18,9 +18,9 @@ $(document).ready(function() {
   $(".js-vertical-tab").click(function(event) {
     event.preventDefault();
 
-    $(".js-vertical-tab-content").hide();
+    $(".js-vertical-tab-content").fadeOut();
     var activeTab = $(this).attr("rel");
-    $("#"+activeTab).show();
+    $("#"+activeTab).fadeIn();
 
     $(".js-vertical-tab").removeClass("is-active");
     $(this).addClass("is-active");
@@ -33,9 +33,9 @@ $(document).ready(function() {
   $(".js-vertical-tab-accordion-heading").click(function(event) {
     event.preventDefault();
 
-    $(".js-vertical-tab-content").hide();
+    $(".js-vertical-tab-content").fadeOut();
     var accordion_activeTab = $(this).attr("rel");
-    $("#"+accordion_activeTab).show();
+    $("#"+accordion_activeTab).fadeIn();
 
     $(".js-vertical-tab-accordion-heading").removeClass("is-active");
     $(this).addClass("is-active");
