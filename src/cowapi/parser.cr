@@ -39,7 +39,7 @@ module Cowapi
     output
   end
 
-  def self.parse_hero(parsed, heroID, heroName, mode)
+  def self.parse_hero(parsed : Myhtml::Parser, heroID, heroName, mode)
     comp, qp = nil, nil
     careerStats = parsed.css("div[data-js='career-category']").to_a
     puts careerStats
@@ -57,7 +57,7 @@ module Cowapi
     Hero.new(heroName, qp, comp)
   end
 
-  def self.parse_heroes(parsed : XML::Node, mode, input = HERO_DIV_IDS)
+  def self.parse_heroes(parsed : Myhtml::Parser, mode, input = HERO_DIV_IDS)
     output = [] of Hero
 
     input.each do |name, id|
