@@ -20,6 +20,8 @@ require "http/client"
 
 require "kemal"
 require "redis"
+require "myhtml"
+require "modest"
 
 require "./cowapi/logger.cr"
 require "./cowapi/data"

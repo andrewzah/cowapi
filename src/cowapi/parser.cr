@@ -15,20 +15,21 @@
 
 module Cowapi
   def self.parse_career_stats(node, heroID) : Array(Stat) | Nil
-    boxes = xpath_ns(node, ".//div[@data-category-id='#{heroID}']")
+    boxes = node.css("div[data-category-id='#{heroID}']").to_a
     return nil if boxes.empty?
 
     output = [] of Stat
     boxes[0].children.each do |box|
-      category = make_json_friendly(xpath_ns(box, "./div/table/thead/tr/th/span/text()")[0].content)
-      cells = xpath_ns(box, ".//tr")
+      #category = make_json_friendly(box.css("div/table/thead/tr/th/span").to_a[0].inner_text)
+      category = make_json_friendly(box.css("div table thead tr th span").to_a[0].inner_text)
+      cells = box.css("tr").to_a
 
       cells.each do |cell|
-        tds = xpath_ns(cell, "./td")
+        tds = cell.css("td").to_a
         next if tds.size == 0 # skip table header
 
-        name = make_json_friendly(tds[0].content)
-        value = tds[1].content
+        name = make_json_friendly(tds[0].inner_text)
+        value = tds[1].inner_text
 
         stat = Stat.new(name, resolve_value(value), category)
         output << stat
@@ -38,13 +39,18 @@ module Cowapi
     output
   end
 
-  def self.parse_hero(parsed : XML::Node, heroID, heroName, mode) : Hero
+  def self.parse_hero(parsed, heroID, heroName, mode)
     comp, qp = nil, nil
-    careerStats = xpath_ns(parsed, "//div[@data-js='career-category']")
+    careerStats = parsed.css("div[data-js='career-category']").to_a
+    puts careerStats
     careerStats.each do |node|
-      if node["id"] == "competitive"
+      puts node.inspect
+    end
+    careerStats.each do |node|
+      case node.attribute_by("id")
+      when "competitive"
         comp = parse_career_stats(node, heroID) unless mode == "quickplay"
-      elsif node["id"] == "quickplay"
+      when "quickplay"
         qp = parse_career_stats(node, heroID) unless mode == "competitive"
       end
     end

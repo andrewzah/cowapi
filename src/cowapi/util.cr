@@ -23,8 +23,8 @@ module Cowapi
 
   # Reduce repetitive .xpath("...").as(XML::NodeSet)
   # in parser.cr
-  def self.xpath_ns(element, path)
-    element.xpath(path).as(XML::NodeSet)
+  def self.select(element, path)
+    element.css(path)
   end
 
   def self.jsonify_error(message)
