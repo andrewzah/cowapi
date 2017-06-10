@@ -32,6 +32,7 @@ require "./cowapi/parser"
 require "./cowapi/routes"
 
 module Cowapi
-  REDIS = ::Redis.new
-  Kemal.run
+  CONFIG = CowapiConfig.from_json(File.read("config.json"))
+  REDIS = ::Redis.new(CONFIG.redis_host, CONFIG.redis_port)
+  Kemal.run(CONFIG.port)
 end

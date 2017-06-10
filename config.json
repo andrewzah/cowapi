@@ -1,0 +1,5 @@
+{
+  "port": 4466,
+  "redis_port": 6379,
+  "redis_host": "0.0.0.0"
+}

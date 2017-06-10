@@ -6,19 +6,11 @@ shards:
 
   kemal:
     github: kemalcr/kemal
-    commit: 0724e07c22513790fbeefeca3bf8e1a8407d44b2
+    commit: 66612eeb04fd59b6cb26919f38859d0440f68153
 
   kilt:
     github: jeromegn/kilt
     version: 0.3.3
-
-  modest:
-    github: kostya/modest
-    version: 0.12
-
-  myhtml:
-    github: kostya/myhtml
-    version: 0.25
 
   radix:
     github: luislavena/radix

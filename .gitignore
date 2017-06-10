@@ -1,5 +1,7 @@
 *.rdb
 .DS_Store
+speedtest.cr
+speedtest
 
 cowapi
 /doc/

@@ -1,7 +1,7 @@
 module Cowapi
   alias MixedTypes = Int32 | Float32 | String
 
-  class Profile
+  struct Profile
     def initialize(@profile, @heroes)
     end
 
@@ -11,7 +11,7 @@ module Cowapi
     )
   end
 
-  class ProfileStats
+  struct ProfileStats
     def initialize(
                    @avatar,
                    @name,
@@ -35,7 +35,7 @@ module Cowapi
     )
   end
 
-  class Hero
+  struct Hero
     def initialize(@name, @quickplay = nil, @comp = nil)
     end
 
@@ -46,7 +46,7 @@ module Cowapi
     )
   end
 
-  class Stat
+  struct Stat
     def initialize(@name, @value, @category)
     end
 
@@ -54,6 +54,14 @@ module Cowapi
       name: String,
       value: MixedTypes,
       category: String
+    )
+  end
+
+  struct CowapiConfig
+    JSON.mapping(
+      port: Int32,
+      redis_port: Int32,
+      redis_host: String
     )
   end
 end

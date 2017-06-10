@@ -1,0 +1,18 @@
+version: '3.0'
+services:
+  nginx:
+    image: nginx
+  redis:
+    image: redis
+    links:
+      - nginx
+  cowapi:
+    build: .
+    links:
+      - redis
+    depends_on:
+      - redis
+    ports:
+      - "3002:3000"
+    volumes:
+      - .:/cowapi
